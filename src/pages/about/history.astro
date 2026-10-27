@@ -10,47 +10,66 @@ import Icon from '../../components/ui/Icon.astro';
   description="From the Qaumi Chagha to the Togh Peace Committee: A New Era of Collective Awakening. Official bilingual historical charter and ideological foundation of Togh Bala & Payan."
 >
   <!-- Manifesto Hero Section -->
-  <section class="manifesto-hero">
-    <div class="container">
-      <div class="manifesto-hero-inner text-center reveal-on-scroll">
-        <!-- Badge Cluster -->
+  <section class="manifesto-hero" id="manifesto-hero">
+    <!-- Ambient Heritage Glow & Subtle Backdrop Grid -->
+    <div class="manifesto-hero-ambient" aria-hidden="true"></div>
+    <div class="manifesto-hero-grid" aria-hidden="true"></div>
+
+    <div class="container hero-container-centered">
+      <div class="manifesto-hero-inner reveal-on-scroll">
+        <!-- Centered Badge Cluster -->
         <div class="hero-badge-cluster">
-          <Badge variant="gold">Historical Manifesto • تاریخی منشور</Badge>
+          <Badge variant="gold">
+            <Icon name="document" size={13} />
+            <span>Official Historical Charter &bull; باضابطہ تاریخی منشور</span>
+          </Badge>
           <span class="manifesto-status-pill">
             <Icon name="shield" size={13} class="text-green" />
             <span>Ideological Foundation &bull; فکری و نظریاتی اساس</span>
           </span>
+          <span class="manifesto-ratified-pill">
+            <Icon name="balance" size={13} class="text-gold" />
+            <span>22-Member Cabinet Oath &bull; حلف بر قرآن پاک</span>
+          </span>
         </div>
 
-        <!-- Main Monumental Heading (Bilingual) -->
+        <!-- Monumental Headings (100% Center-Aligned) -->
         <h1 class="manifesto-title en-text">
-          Togh Bala Kohat: From the Qaumi Chagha to the Togh Peace Committee
+          Togh Bala Kohat: From the <span class="highlight-gold">Qaumi Chagha</span> to the Togh Peace Committee
         </h1>
         <h2 class="manifesto-subtitle-ur urdu-text" dir="rtl">
           توغ بالا کوہاٹ: قومی چیغہ سے توغ امن کمیٹی تک — اجتماعی بیداری کا ایک نیا دور
         </h2>
 
-        <p class="manifesto-lead-meta">
-          <span><Icon name="calendar" size={13} /> Official Charter</span>
-          <span>&bull;</span>
-          <span><Icon name="document" size={13} /> 14 Chapters</span>
-          <span>&bull;</span>
-          <span><Icon name="balance" size={13} /> Unabridged Bilingual Document</span>
-        </p>
+        <!-- Elegant Heritage Divider -->
+        <div class="hero-crest-divider" aria-hidden="true">
+          <span class="crest-line"></span>
+          <span class="crest-symbol">❖</span>
+          <span class="crest-line"></span>
+        </div>
 
-        <!-- Interactive Language Switcher Bar -->
+        <!-- Metadata Strip (Centered) -->
+        <div class="manifesto-lead-meta">
+          <span class="meta-item"><Icon name="calendar" size={14} class="text-green" /> Official Charter</span>
+          <span class="meta-dot">&bull;</span>
+          <span class="meta-item"><Icon name="document" size={14} class="text-gold" /> 14 Codified Chapters</span>
+          <span class="meta-dot">&bull;</span>
+          <span class="meta-item"><Icon name="balance" size={14} class="text-green" /> Unabridged Bilingual Document</span>
+        </div>
+
+        <!-- Interactive Language Switcher Bar (Centered) -->
         <div class="lang-switch-box" id="lang-switcher">
-          <span class="lang-switch-label">Select Reading Mode / پڑھنے کا انداز:</span>
+          <span class="lang-switch-label">Select Reading Mode &bull; پڑھنے کے انداز کا انتخاب:</span>
           <div class="lang-btn-group" role="tablist">
             <button type="button" class="lang-btn active" data-lang="dual" aria-selected="true">
-              <Icon name="check-circle" size={14} class="check-icon" />
-              <span>Bilingual (English + اردو)</span>
+              <Icon name="check-circle" size={15} class="check-icon" />
+              <span>Bilingual Edition (English + اردو)</span>
             </button>
             <button type="button" class="lang-btn" data-lang="en" aria-selected="false">
               <span>English Only</span>
             </button>
             <button type="button" class="lang-btn" data-lang="ur" aria-selected="false">
-              <span>صرف اردو (Nastaliq)</span>
+              <span class="urdu-text" dir="rtl">صرف اردو ایڈیشن</span>
             </button>
           </div>
         </div>
@@ -858,22 +877,68 @@ import Icon from '../../components/ui/Icon.astro';
 </BaseLayout>
 
 <style>
-  /* Hero Styles */
+  /* Hero Styles (Monumental, Luxurious & Perfectly Centered) */
   .manifesto-hero {
-    background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, var(--color-background) 100%);
-    padding-top: var(--space-12);
-    padding-bottom: var(--space-12);
-    border-bottom: 1px solid var(--color-border);
     position: relative;
+    background: radial-gradient(circle at 50% 12%, #FFFFFF 0%, #F5F9F6 55%, var(--color-background) 100%);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .manifesto-hero-ambient {
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 850px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(212, 160, 23, 0.12) 0%, rgba(6, 77, 50, 0.05) 50%, transparent 75%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(45px);
+  }
+
+  .manifesto-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(6, 77, 50, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-container-centered {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .manifesto-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .hero-badge-cluster {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: var(--space-3);
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    margin: 0 auto var(--space-5);
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
   }
 
   .manifesto-status-pill {
@@ -884,44 +949,101 @@ import Icon from '../../components/ui/Icon.astro';
     font-weight: 700;
     color: var(--color-primary);
     background: rgba(6, 77, 50, 0.08);
-    padding: 3px 12px;
+    padding: 4px 12px;
     border-radius: 9999px;
     border: 1px solid rgba(6, 77, 50, 0.15);
   }
 
+  .manifesto-ratified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #996B00;
+    background: #FFF9E6;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(212, 160, 23, 0.35);
+  }
+
   .manifesto-title {
-    font-size: clamp(2rem, 3.8vw, 3rem);
-    font-weight: 800;
+    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+    font-weight: 850;
     color: var(--color-primary);
-    line-height: 1.2;
-    margin: 0 auto var(--space-2);
-    max-width: 960px;
+    line-height: 1.18;
+    margin: 0 auto var(--space-3);
+    max-width: 980px;
+    text-align: center;
+    letter-spacing: -0.025em;
+    width: 100%;
+  }
+
+  .highlight-gold {
+    color: var(--color-gold);
+    background: linear-gradient(135deg, #064D32 0%, #D4A017 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .manifesto-subtitle-ur {
-    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-size: clamp(1.45rem, 2.7vw, 2.1rem);
     font-weight: 700;
     color: var(--color-green);
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0 auto var(--space-4);
-    max-width: 900px;
+    max-width: 920px;
+    text-align: center;
+    direction: rtl;
+    width: 100%;
+  }
+
+  /* Ornamental Divider */
+  .hero-crest-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto var(--space-4);
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .crest-line {
+    height: 1.5px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  }
+
+  .crest-symbol {
+    font-size: 13px;
+    color: var(--color-gold);
+    line-height: 1;
   }
 
   .manifesto-lead-meta {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    font-size: 13px;
+    gap: 14px;
+    font-size: 13.5px;
     color: var(--color-text-muted);
     font-weight: 600;
-    margin-bottom: var(--space-6);
+    margin: 0 auto var(--space-6);
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
   }
 
-  .manifesto-lead-meta span {
+  .meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+  }
+
+  .meta-dot {
+    color: var(--color-gold);
+    opacity: 0.7;
   }
 
   /* Language Switcher Bar */
@@ -929,52 +1051,60 @@ import Icon from '../../components/ui/Icon.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    margin-top: var(--space-4);
+    justify-content: center;
+    gap: 10px;
+    margin: var(--space-2) auto 0;
+    width: 100%;
+    text-align: center;
   }
 
   .lang-switch-label {
     font-size: 12px;
     font-weight: 700;
-    color: var(--color-text-muted);
+    color: var(--color-text-subtle);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    text-align: center;
   }
 
   .lang-btn-group {
     display: inline-flex;
     background: #FFFFFF;
-    padding: 4px;
+    padding: 5px;
     border-radius: 9999px;
-    border: 1px solid rgba(6, 77, 50, 0.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1.5px solid rgba(6, 77, 50, 0.2);
+    box-shadow: 0 8px 24px rgba(6, 77, 50, 0.08);
     gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .lang-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 18px;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 20px;
     border-radius: 9999px;
     border: none;
     background: transparent;
     color: var(--color-text);
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .lang-btn:hover {
     color: var(--color-primary);
-    background: rgba(6, 77, 50, 0.04);
+    background: rgba(6, 77, 50, 0.05);
+    transform: translateY(-1px);
   }
 
   .lang-btn.active {
     background: var(--color-primary);
     color: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(6, 77, 50, 0.3);
+    box-shadow: 0 4px 14px rgba(6, 77, 50, 0.3);
   }
 
   .check-icon {
