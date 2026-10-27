@@ -1,6 +1,4 @@
-# Cloudflare Pages Redirects
-# Note: Source URLs must be relative. Domain-level redirects are configured in Cloudflare Dashboard > Rules.
-
+# Cloudflare Redirects
 /constitution /transparency/constitution 301
 /history /about/history 301
 /manifesto /about/history 301
