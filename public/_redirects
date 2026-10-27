@@ -1,6 +1,6 @@
-# Redirect root domain to www canonical
-https://toghamancomitee.com/* https://www.toghamancomitee.com/:splat 301!
+# Cloudflare Pages Redirects
+# Note: Source URLs must be relative. Domain-level redirects are configured in Cloudflare Dashboard > Rules.
 
-# Redirect typo twin domain to canonical
-https://toghamancommittee.com/* https://www.toghamancomitee.com/:splat 301!
-http://toghamancommittee.com/* https://www.toghamancomitee.com/:splat 301!
+/constitution /transparency/constitution 301
+/history /about/history 301
+/manifesto /about/history 301
